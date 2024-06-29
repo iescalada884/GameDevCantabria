@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ea553459cc8654d92971fdad336809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SurvivalTimeThreshold: 2
+  SurvivalTimeThreshold: 10
   YDeathThreshold: -10
 --- !u!4 &479705147
 Transform:

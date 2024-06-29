@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 1042011109}
   m_Layer: 0
   m_Name: GameManger
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d68829690adfbc4fb722b3a678b1b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escenador: {fileID: 1042011110}
+  gameManager: {fileID: 1042011109}
 --- !u!1 &1812033193
 GameObject:
   m_ObjectHideFlags: 0

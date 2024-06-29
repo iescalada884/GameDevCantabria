@@ -27,19 +27,26 @@ public class DialogManager : MonoBehaviour
 
     public TextMeshProUGUI cuadroDialogo;
     public TextMeshProUGUI personaje;
+    private GameManager gameManager;
+
 
     public int diaglogue;
     public float textSpeed = 0.1f;
     DialogueCointainer dialogueContainer;
     
-     Dialogue[] dialogues;
+    Dialogue[] dialogues;
    
     int index;
-
-// Start is called before the first frame update
-void Start()
+    private void Awake()
     {
-       LoadDialogues(diaglogue);
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gano = gameManager.gano;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+       LoadDialogues(gameManager.currentdialoguenumber);
 
        StartDialogue();
        personaje.text = "???";
@@ -110,7 +117,7 @@ void Start()
         }
         else
         {
-            gameObject.SetActive(false);
+            gameManager.cambiaEscena("JumpMinigame");
         }
     }
 }

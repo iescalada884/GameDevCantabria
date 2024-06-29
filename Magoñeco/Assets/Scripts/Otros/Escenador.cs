@@ -8,8 +8,5 @@ public class Escenador : MonoBehaviour
 {
 
 
-    public void cambiaEscena( string nombre)
-    {
-        SceneManager.LoadScene(nombre);
-    }
+    
 }

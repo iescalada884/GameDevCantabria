@@ -1,22 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
-
-    /*
-     * Para llamar desde otros sitios
-     * public static GameManager Instance
-    {
-        get
-        {
-            if (_instance == null)
-                _instance = FindObjectOfType<GameManager>();
-            return _instance;
-        }
-    }*/
+    public int currentdialoguenumber = 1;
+    public bool gano = false;
 
     private void Awake()
     {
@@ -26,10 +17,15 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject); // Ensure only one instance exists
         DontDestroyOnLoad(gameObject); // Persist across scenes
     }
-
-    // Update is called once per frame
-    void Update()
+    public void cambiaEscena(string nombre)
     {
-        
+        SceneManager.LoadScene(nombre);
+    }
+    public void BackToDialogueScene(bool PlayerWon)
+    {
+        ++currentdialoguenumber;
+        gano = PlayerWon;
+
+        cambiaEscena("Dialog");
     }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MainMenuLogic : MonoBehaviour
 {
-    public Escenador escenador;
+    public GameManager gameManager;
 
     public void PlayGame()
     {
-        escenador.cambiaEscena("SampleScene");
+        gameManager.cambiaEscena("Dialog");
     }
 }

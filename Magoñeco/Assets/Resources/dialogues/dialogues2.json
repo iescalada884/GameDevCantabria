@@ -1,0 +1,24 @@
+{
+    "dialogues": [
+        {
+            "character": "Von Deuthmann:",
+            "text": "Hm… Sorprendente… Parece que siempre hay un roto para un descosido." 
+        },
+        {
+            "character": "Von Deuthmann:",
+            "text": "Vaya esperaba algo mejor… pero no te desesperes, siempre hay un roto para un descosido"
+        },
+        {
+            "character": "Von Deuthmann:",
+            "text": "Otros aspirantes caen en las pruebas y sus restos son reciclados para… Bueno, no perdamos el hilo, que queda mucha tela que cortar."
+        },
+        {
+            "character": "Von Deuthmann:",
+            "text": "¡Demonios que susurran, dadnos la siguiente prueba!"
+        },
+        {
+            "character": "Von Deuthmann:",
+            "text": "¡…!"
+            }
+    ]
+}
