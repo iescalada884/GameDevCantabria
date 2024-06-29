@@ -393,6 +393,42 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 3360753705227258011, guid: a931918e958b5e245aa4f45659a18d2c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.40990168
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360753705227258011, guid: a931918e958b5e245aa4f45659a18d2c,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.41687006
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360753705227258011, guid: a931918e958b5e245aa4f45659a18d2c,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.002027452
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360753705227258011, guid: a931918e958b5e245aa4f45659a18d2c,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.00079665333
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360753705227258011, guid: a931918e958b5e245aa4f45659a18d2c,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.408
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360753705227258011, guid: a931918e958b5e245aa4f45659a18d2c,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.408
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723131111158922599, guid: a931918e958b5e245aa4f45659a18d2c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 747cb647662d548c0949304a23e94246,
+        type: 3}
     - target: {fileID: 8723131111158922599, guid: a931918e958b5e245aa4f45659a18d2c,
         type: 3}
       propertyPath: m_Color.b
@@ -459,7 +495,7 @@ PrefabInstance:
     - target: {fileID: 5779650163587892707, guid: 605e0960556d5ea4c9fbb16f2116e870,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.22
       objectReference: {fileID: 0}
     - target: {fileID: 5779650163587892707, guid: 605e0960556d5ea4c9fbb16f2116e870,
         type: 3}

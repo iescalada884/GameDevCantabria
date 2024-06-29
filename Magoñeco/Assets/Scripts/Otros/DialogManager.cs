@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
-using UnityEditor.ShaderGraph.Serialization;
 using System.IO;
 using UnityEngine.UI;
 
@@ -117,7 +116,7 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
-            gameManager.cambiaEscena("JumpMinigame");
+            gameManager.LoadRandomMiniGameScene();
         }
     }
 }

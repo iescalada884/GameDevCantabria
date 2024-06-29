@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public int currentdialoguenumber = 1;
     public bool gano = false;
 
+    private List<int> MiniGameSceneIndexes = new List<int>();
+
     private void Awake()
     {
         if (_instance == null)
@@ -16,11 +18,26 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject); // Ensure only one instance exists
         DontDestroyOnLoad(gameObject); // Persist across scenes
+
+        for (int i = 2; i < SceneManager.sceneCountInBuildSettings; ++i)
+        {
+            MiniGameSceneIndexes.Add(i);
+        }
     }
+
     public void cambiaEscena(string nombre)
     {
         SceneManager.LoadScene(nombre);
     }
+
+    public void LoadRandomMiniGameScene()
+    {
+        int RandomListIndex = Random.Range(0, MiniGameSceneIndexes.Count);
+        int RandomMiniGameSceneIndex = MiniGameSceneIndexes[RandomListIndex];
+        MiniGameSceneIndexes.RemoveAt(RandomListIndex);
+        SceneManager.LoadScene(RandomMiniGameSceneIndex);
+    }
+
     public void BackToDialogueScene(bool PlayerWon)
     {
         ++currentdialoguenumber;
