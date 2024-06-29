@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/JumpMinigame.unity
-    guid: 93be13bd02aa1754da16dd9dbfea8684
+    path: Assets/Scenes/FlapMinigame.unity
+    guid: 92d873e9303912c4086f591afdb58ac1
   m_configObjects: {}

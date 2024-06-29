@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovementScript : MonoBehaviour
 {
+    public UnityEvent<GameObject> OnPlayerCollisionEnter = new UnityEvent<GameObject>();
     public Rigidbody2D Rigidbody = null;
 
     public float MovementSpeed = 0.0f;
-    public float JumpForce = 0.0f; 
-    private bool CanJump = true;    
+    public float JumpForce = 0.0f;
+    public bool JumpLimiter = true;
+    private bool CanJump = true;
     
     void Start()
     {
@@ -48,7 +51,10 @@ public class PlayerMovementScript : MonoBehaviour
         }
 
         Rigidbody.velocity = Vector2.up * JumpForce;
-        CanJump = false;
+        if (JumpLimiter)
+        {
+            CanJump = false;
+        }
     }
 
     void ResetJump()
@@ -63,5 +69,7 @@ public class PlayerMovementScript : MonoBehaviour
         {
             ResetJump();
         }
+
+        OnPlayerCollisionEnter.Invoke(CollidedGameObject);
     }
 }
