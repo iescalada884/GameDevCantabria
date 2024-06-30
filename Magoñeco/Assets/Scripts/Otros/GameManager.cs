@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
            
         }
         else {
+            ++currentdialoguenumber;
             gano = currentStats.victories == SceneManager.sceneCountInBuildSettings - 3;
         }
 
