@@ -171,6 +171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5198978c57f90d846a1c6969801f18fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPlayerCollisionEnter:
+    m_PersistentCalls:
+      m_Calls: []
   Rigidbody: {fileID: 0}
   MovementSpeed: 10
   JumpForce: 0
+  VerticalMovementEnabled: 0
+  JumpLimiter: 1
+  CanJump: 1
