@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SurvivalTimeThreshold: 10
-  XDeathThreshold: -10
+  XDeathThreshold: -15
   YDeathThreshold: -10
 --- !u!4 &479705147
 Transform:

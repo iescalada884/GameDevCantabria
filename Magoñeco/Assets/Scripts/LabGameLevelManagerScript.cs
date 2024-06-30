@@ -8,7 +8,9 @@ public class LabGameLevelManagerScript : LevelManagerScript
 
     public void Start()
     {
+        Debug.Log("AAAAAAAAA");
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementScript>();
+        Player.OnPlayerCollisionEnter.AddListener(OnPlayerCollisionEnter);
         Player.VerticalMovementEnabled = true;
         Player.CanJump= false;
     }
@@ -20,6 +22,14 @@ public class LabGameLevelManagerScript : LevelManagerScript
         if (SurvivalTimer >= SurvivalTimeThreshold)
         {
             OnMiniGameEndedDelegate.Invoke(false);
+        }
+    }
+
+    public void OnPlayerCollisionEnter(GameObject CollidedGameObject)
+    {
+        if (CollidedGameObject.tag == "Goal")
+        {
+            OnMiniGameEndedDelegate.Invoke(true);
         }
     }
 }
