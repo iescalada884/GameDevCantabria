@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class LevelManagerScript : MonoBehaviour
 {
-    public delegate void OnMiniGameEndedDelegateFunc(bool PlayerWon);
+    public delegate void OnMiniGameEndedDelegateFunc(bool PlayerWon, AudioClip AudioToPlay);
     public OnMiniGameEndedDelegateFunc OnMiniGameEndedDelegate;
 
     private GameManager gameManager;
 
     public TextMeshProUGUI CountDownText;
+    public AudioClip ClearAudio;
+    public AudioClip DeathAudio;
 
     public float SurvivalTime = 0.0f;
     protected float SurvivalTimer = 0.0f;
@@ -23,9 +25,9 @@ public class LevelManagerScript : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
-    public void OnMiniGameEnded(bool PlayerWon)
+    public void OnMiniGameEnded(bool PlayerWon, AudioClip AudioToPlay)
     {
-        gameManager.BackToDialogueScene(PlayerWon);
+        gameManager.BackToDialogueScene(PlayerWon, AudioToPlay);
     }
 
     public void UpdateCounDownText(float SurvivalTimer)

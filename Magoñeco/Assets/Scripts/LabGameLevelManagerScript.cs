@@ -20,7 +20,7 @@ public class LabGameLevelManagerScript : LevelManagerScript
         UpdateCounDownText(SurvivalTimer);
         if (SurvivalTimer <= 0.0f)
         {
-            OnMiniGameEndedDelegate.Invoke(false);
+            OnMiniGameEndedDelegate.Invoke(false, DeathAudio);
         }
     }
 
@@ -28,7 +28,7 @@ public class LabGameLevelManagerScript : LevelManagerScript
     {
         if (CollidedGameObject.tag == "Goal")
         {
-            OnMiniGameEndedDelegate.Invoke(true);
+            OnMiniGameEndedDelegate.Invoke(true, ClearAudio);
         }
     }
 }

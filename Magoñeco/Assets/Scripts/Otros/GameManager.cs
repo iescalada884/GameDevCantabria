@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
 
     private List<int> miniGameSceneIndexes = new List<int>();
+    private AudioSource AudioSource = null;
+
 
     private void Awake()
     {
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject); // Ensure only one instance exists
         DontDestroyOnLoad(gameObject); // Persist across scenes
+
+        AudioSource = GetComponent<AudioSource>();
 
         for (int i = 3; i < SceneManager.sceneCountInBuildSettings; ++i)
         {
@@ -55,8 +59,13 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(RandomMiniGameSceneIndex);
     }
 
-    public void BackToDialogueScene(bool PlayerWon)
+    public void BackToDialogueScene(bool PlayerWon, AudioClip AudioToPlay)
     {
+        if (AudioToPlay)
+        {
+            AudioSource.PlayOneShot(AudioToPlay);
+        }
+
         if (miniGameSceneIndexes.Count != 0)
         {
             ++currentdialoguenumber;

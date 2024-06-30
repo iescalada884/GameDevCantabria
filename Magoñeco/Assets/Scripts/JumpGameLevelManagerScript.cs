@@ -20,12 +20,12 @@ public class JumpGameLevelManagerScript : LevelManagerScript
         UpdateCounDownText(SurvivalTimer);
         if (SurvivalTimer <= 0.0f)
         {
-            OnMiniGameEndedDelegate.Invoke(true);
+            OnMiniGameEndedDelegate.Invoke(true, ClearAudio);
         }
 
         if (Player.transform.position.x <= XDeathThreshold || Player.transform.position.y <= YDeathThreshold)
         {
-            OnMiniGameEndedDelegate.Invoke(false);
+            OnMiniGameEndedDelegate.Invoke(false, DeathAudio);
         }
     }
 }

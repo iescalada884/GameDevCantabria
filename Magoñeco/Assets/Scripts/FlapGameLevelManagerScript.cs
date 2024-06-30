@@ -20,7 +20,7 @@ public class FlapGameLevelManagerScript : LevelManagerScript
         UpdateCounDownText(SurvivalTimer);
         if (SurvivalTimer <= 0.0f)
         {
-            OnMiniGameEndedDelegate.Invoke(false);
+            OnMiniGameEndedDelegate.Invoke(true, ClearAudio);
         }
     }
 
@@ -28,7 +28,7 @@ public class FlapGameLevelManagerScript : LevelManagerScript
     {
         if (CollidedGameObject.tag == "Platform")
         {
-            OnMiniGameEndedDelegate.Invoke(false);
+            OnMiniGameEndedDelegate.Invoke(false, DeathAudio);
         }
     }
 }

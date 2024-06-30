@@ -1874,7 +1874,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountDownText: {fileID: 0}
-  SurvivalTime: 20
+  ClearAudio: {fileID: 8300000, guid: 04ffad5569b8e7d4f8399b99eddf5f16, type: 3}
+  DeathAudio: {fileID: 8300000, guid: 6c05149e5a2fba64ba172e25a61074b7, type: 3}
+  SurvivalTime: 15
 --- !u!4 &491092442 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 958161064216583007, guid: 5d87887ea63d14849a059763aed657b1,
