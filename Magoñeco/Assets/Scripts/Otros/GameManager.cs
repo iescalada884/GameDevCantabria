@@ -48,15 +48,19 @@ public class GameManager : MonoBehaviour
 
     public void LoadRandomMiniGameScene()
     {
-        if (miniGameSceneIndexes.Count == 0) 
+        Debug.Log(miniGameSceneIndexes.Count);
+
+        if (miniGameSceneIndexes.Count <= 1) 
         {
             SceneManager.LoadScene("FinalScene");
+        } else
+        {
+            int RandomListIndex = Random.Range(0, miniGameSceneIndexes.Count);
+            int RandomMiniGameSceneIndex = miniGameSceneIndexes[RandomListIndex];
+            miniGameSceneIndexes.RemoveAt(RandomListIndex);
+            SceneManager.LoadScene(RandomMiniGameSceneIndex);
         }
-
-        int RandomListIndex = Random.Range(0, miniGameSceneIndexes.Count);
-        int RandomMiniGameSceneIndex = miniGameSceneIndexes[RandomListIndex];
-        miniGameSceneIndexes.RemoveAt(RandomListIndex);
-        SceneManager.LoadScene(RandomMiniGameSceneIndex);
+     
     }
 
     public void BackToDialogueScene(bool PlayerWon, AudioClip AudioToPlay)

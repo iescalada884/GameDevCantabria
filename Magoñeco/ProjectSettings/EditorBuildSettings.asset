@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LabMinigame.unity
     guid: 2f7515f16e8ae57438d8e4480890f23e
+  - enabled: 1
+    path: Assets/Scenes/Tijeritas.unity
+    guid: 87e23714d61e4994fb2c88f94d34d8fa
   m_configObjects: {}
