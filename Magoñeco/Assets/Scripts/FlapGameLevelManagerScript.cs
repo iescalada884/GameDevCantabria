@@ -16,11 +16,11 @@ public class FlapGameLevelManagerScript : LevelManagerScript
 
     public void Update()
     {
-        SurvivalTimer += Time.deltaTime;
-
-        if (SurvivalTimer >= SurvivalTimeThreshold)
+        SurvivalTimer -= Time.deltaTime;
+        UpdateCounDownText(SurvivalTimer);
+        if (SurvivalTimer <= 0.0f)
         {
-            OnMiniGameEndedDelegate.Invoke(true);
+            OnMiniGameEndedDelegate.Invoke(false);
         }
     }
 

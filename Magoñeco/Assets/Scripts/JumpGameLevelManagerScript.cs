@@ -16,9 +16,9 @@ public class JumpGameLevelManagerScript : LevelManagerScript
 
     public void Update()
     {
-        SurvivalTimer += Time.deltaTime;
-
-        if (SurvivalTimer >= SurvivalTimeThreshold)
+        SurvivalTimer -= Time.deltaTime;
+        UpdateCounDownText(SurvivalTimer);
+        if (SurvivalTimer <= 0.0f)
         {
             OnMiniGameEndedDelegate.Invoke(true);
         }

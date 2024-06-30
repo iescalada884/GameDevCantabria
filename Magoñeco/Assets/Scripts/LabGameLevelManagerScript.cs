@@ -8,7 +8,6 @@ public class LabGameLevelManagerScript : LevelManagerScript
 
     public void Start()
     {
-        Debug.Log("AAAAAAAAA");
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementScript>();
         Player.OnPlayerCollisionEnter.AddListener(OnPlayerCollisionEnter);
         Player.VerticalMovementEnabled = true;
@@ -17,9 +16,9 @@ public class LabGameLevelManagerScript : LevelManagerScript
 
     public void Update()
     {
-        SurvivalTimer += Time.deltaTime;
-
-        if (SurvivalTimer >= SurvivalTimeThreshold)
+        SurvivalTimer -= Time.deltaTime;
+        UpdateCounDownText(SurvivalTimer);
+        if (SurvivalTimer <= 0.0f)
         {
             OnMiniGameEndedDelegate.Invoke(false);
         }
