@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
 using System;
+using TMPro;
 using System.IO;
-using UnityEngine.UI;
+using UnityEngine;
 
 
 [System.Serializable]
@@ -24,18 +23,23 @@ public class DialogManager : MonoBehaviour
     //variables
     public bool gano = true;
 
+    public AudioSource[] audioSources;
     public TextMeshProUGUI cuadroDialogo;
     public TextMeshProUGUI personaje;
-    private GameManager gameManager;
 
+    private GameManager gameManager;
 
     public int diaglogue;
     public float textSpeed = 0.1f;
+
+
     DialogueCointainer dialogueContainer;
     
     Dialogue[] dialogues;
    
     int index;
+    int currentAudioIndex;
+
     private void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -89,6 +93,9 @@ public class DialogManager : MonoBehaviour
 
     IEnumerator WriteLine()
     {
+        currentAudioIndex = UnityEngine.Random.Range(0, audioSources.Length - 1);
+        audioSources[currentAudioIndex].Play();
+
         foreach (char letter in dialogues[index].text.ToCharArray()) {
             cuadroDialogo.text += letter;
 
@@ -100,6 +107,8 @@ public class DialogManager : MonoBehaviour
     public void NextLine()
     {
        StopAllCoroutines();
+        audioSources[currentAudioIndex].Stop();
+
         cuadroDialogo.text = String.Empty;
 
         if (index < dialogues.Length)
