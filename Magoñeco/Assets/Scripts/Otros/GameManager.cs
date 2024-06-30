@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void BackToDialogueScene(bool PlayerWon, AudioClip AudioToPlay)
     {
-        if (AudioToPlay)
+         if (AudioToPlay)
         {
             AudioSource.PlayOneShot(AudioToPlay);
         }
@@ -80,6 +80,9 @@ public class GameManager : MonoBehaviour
            
         }
         else {
+            if (PlayerWon)
+                currentStats.victories++;
+
             ++currentdialoguenumber;
             gano = currentStats.victories == SceneManager.sceneCountInBuildSettings - 4;
         }

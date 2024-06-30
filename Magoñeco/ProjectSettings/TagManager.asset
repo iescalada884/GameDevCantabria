@@ -9,6 +9,7 @@ TagManager:
   - GameManager
   - Goal
   - Text
+  - Tijeras
   layers:
   - Default
   - TransparentFX

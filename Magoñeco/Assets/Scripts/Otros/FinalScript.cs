@@ -32,15 +32,15 @@ public class FinalScript : MonoBehaviour
 
         if (gano)
         {
-
-            tijeras.SetActive(false);
             victoria.SetActive(true);
 
         }
-
-        derrota.SetActive(true);
-        
-        msg.SetText(String.Format("No superaste las pruebas ({0}/3), eres defectuoso. ES HORA DEL DESHILACHADOR!!!!!", stats.victories));
+        else
+        {
+            derrota.SetActive(true);
+            tijeras.SetActive(true);
+            msg.SetText(String.Format("No superaste las pruebas ({0}/3), eres defectuoso. ES HORA DEL DESHILACHADOR!!!!!", stats.victories));
+        }
     }
 
 
