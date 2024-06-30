@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Stats
 {
-    int victories = 0;
-    int levelsUnloked = 0;
+    public int victories = 0;
+    public int levelsUnloked = 0;
 
 }
 
@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public int currentdialoguenumber = 1;
     public bool gano = false;
-    private Stats currentStats;
+    public Stats currentStats;
 
 
     private List<int> miniGameSceneIndexes = new List<int>();
@@ -57,8 +57,18 @@ public class GameManager : MonoBehaviour
 
     public void BackToDialogueScene(bool PlayerWon)
     {
-        ++currentdialoguenumber;
-        gano = PlayerWon;
+        if (miniGameSceneIndexes.Count != 0)
+        {
+            ++currentdialoguenumber;
+            gano = PlayerWon;
+
+            if (PlayerWon)
+                currentStats.victories++;
+           
+        }
+        else {
+            gano = currentStats.victories == SceneManager.sceneCountInBuildSettings - 3;
+        }
 
         cambiaEscena("Dialog");
     }
