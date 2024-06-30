@@ -1,15 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal.Internal;
 using UnityEngine.SceneManagement;
+
+public class Stats
+{
+    int victories = 0;
+    int levelsUnloked = 0;
+
+}
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
     public int currentdialoguenumber = 1;
     public bool gano = false;
+    private Stats currentStats;
 
-    private List<int> MiniGameSceneIndexes = new List<int>();
+
+    private List<int> miniGameSceneIndexes = new List<int>();
 
     private void Awake()
     {
@@ -19,10 +29,12 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject); // Ensure only one instance exists
         DontDestroyOnLoad(gameObject); // Persist across scenes
 
-        for (int i = 2; i < SceneManager.sceneCountInBuildSettings; ++i)
+        for (int i = 3; i < SceneManager.sceneCountInBuildSettings; ++i)
         {
-            MiniGameSceneIndexes.Add(i);
+            miniGameSceneIndexes.Add(i);
         }
+
+        currentStats = new Stats();
     }
 
     public void cambiaEscena(string nombre)
@@ -32,9 +44,14 @@ public class GameManager : MonoBehaviour
 
     public void LoadRandomMiniGameScene()
     {
-        int RandomListIndex = Random.Range(0, MiniGameSceneIndexes.Count);
-        int RandomMiniGameSceneIndex = MiniGameSceneIndexes[RandomListIndex];
-        MiniGameSceneIndexes.RemoveAt(RandomListIndex);
+        if (miniGameSceneIndexes.Count == 0) 
+        {
+            SceneManager.LoadScene("FinalScene");
+        }
+
+        int RandomListIndex = Random.Range(0, miniGameSceneIndexes.Count);
+        int RandomMiniGameSceneIndex = miniGameSceneIndexes[RandomListIndex];
+        miniGameSceneIndexes.RemoveAt(RandomListIndex);
         SceneManager.LoadScene(RandomMiniGameSceneIndex);
     }
 

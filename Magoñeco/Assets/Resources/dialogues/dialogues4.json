@@ -1,0 +1,16 @@
+{
+    "dialogues": [
+        {
+            "character": "Von Deuthmann:",
+            "text": "Ahora vamos a poner en tela de juicio tus resultados… Mmm… vaya… ya veo… Tu destino pende de un hilo… ¡…! ¡Los naipes han hablado! ¡ENHORABUENA, HAS GANADO TU CERTIFICADO DE JEFE FINAL!" 
+        },
+        {
+            "character": "Von Deuthmann:",
+            "text": "Ahora vamos a poner en tela de juicio tus resultados… Mmm… vaya… ya veo… Tu destino está pendiente de un hilo… ¡…! ¡Los naipes han hablado! ¡NO HAS GANADO TU CERTIFICADO DE JEFE FINAL!"
+        },
+        {
+            "character": "Von Deuthmann:",
+            "text": "Esto significa que es el momento de que conozcas la verdad…"
+        }
+    ]
+}

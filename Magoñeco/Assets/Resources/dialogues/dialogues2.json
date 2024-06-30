@@ -2,11 +2,11 @@
     "dialogues": [
         {
             "character": "Von Deuthmann:",
-            "text": "Hm… Sorprendente… Parece que siempre hay un roto para un descosido." 
+            "text": "Mmm… Sorprendente… Parece que siempre hay un roto para un descosido." 
         },
         {
             "character": "Von Deuthmann:",
-            "text": "Vaya esperaba algo mejor… pero no te desesperes, siempre hay un roto para un descosido"
+            "text": "Vaya esperaba algo mejor… pero no te desesperes, siempre hay un roto para un descosido."
         },
         {
             "character": "Von Deuthmann:",
@@ -19,6 +19,6 @@
         {
             "character": "Von Deuthmann:",
             "text": "¡…!"
-            }
+        }
     ]
 }
