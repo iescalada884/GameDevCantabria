@@ -48,7 +48,6 @@ public class DialogManager : MonoBehaviour
        LoadDialogues(gameManager.currentdialoguenumber);
 
        StartDialogue();
-       personaje.text = "???";
     }
 
     // Update is called once per frame
@@ -63,6 +62,8 @@ public class DialogManager : MonoBehaviour
 
         if (!gano)
             index = 1;
+
+        NextLine();
        
     }
 
@@ -99,9 +100,10 @@ public class DialogManager : MonoBehaviour
     public void NextLine()
     {
        StopAllCoroutines();
+        cuadroDialogo.text = String.Empty;
+
         if (index < dialogues.Length)
         {
-            cuadroDialogo.text = string.Empty;
             personaje.text = dialogues[index].character;
             StartCoroutine (WriteLine());
 
