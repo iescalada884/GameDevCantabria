@@ -25,16 +25,32 @@ public class FinalScript : MonoBehaviour
 
         if (gano)
         {
+
+            
             victoria.SetActive(true);
 
         }
         else
         {
-            derrota.SetActive(true);
             tijeras.SetActive(true);
+            derrota.SetActive(true);
+
             msg.SetText(String.Format("No superaste las pruebas ({0}/3), eres defectuoso. ES HORA DEL DESHILACHADOR!!!!!", stats.victories));
         }
     }
 
+    public void playAgain()
+    {
+        gameManager.currentdialoguenumber = 0;
+        gameManager.inicializa();
+
+        gameManager.BackToDialogueScene(false, null);
+
+    }
+
+    public void exit()
+    {
+        gameManager.ExitNow();
+    }
 
 }

@@ -36,6 +36,14 @@ public class GameManager : MonoBehaviour
 
         AudioSource = GetComponent<AudioSource>();
 
+        inicializa();
+    }
+
+    public void inicializa()
+    {
+
+        miniGameSceneIndexes = new List<int> ();
+
         for (int i = 3; i < SceneManager.sceneCountInBuildSettings; ++i)
         {
             miniGameSceneIndexes.Add(i);
@@ -43,7 +51,6 @@ public class GameManager : MonoBehaviour
 
         currentStats = new Stats();
     }
-
     public void cambiaEscena(string nombre)
     {
         SceneManager.LoadScene(nombre);
@@ -73,23 +80,27 @@ public class GameManager : MonoBehaviour
             AudioSource.PlayOneShot(AudioToPlay);
         }
 
-        if (miniGameSceneIndexes.Count != 1)
-        {
-            ++currentdialoguenumber;
-            gano = PlayerWon;
+        //Sumar a minijuegos completados con exito
+        if (PlayerWon)
+            currentStats.victories++;
 
-            if (PlayerWon)
-                currentStats.victories++;
+        ++currentdialoguenumber;
+
+        // control gano
+        if (miniGameSceneIndexes.Count > 1)
+        { 
+            gano = PlayerWon;
            
         }
         else {
-            if (PlayerWon)
-                currentStats.victories++;
-
-            ++currentdialoguenumber;
-            gano = currentStats.victories == SceneManager.sceneCountInBuildSettings - 4;
+            gano = currentStats.victories == 3;
         }
 
         cambiaEscena("Dialog");
+    }
+
+    public void ExitNow()
+    {
+        Application.Quit();
     }
 }
