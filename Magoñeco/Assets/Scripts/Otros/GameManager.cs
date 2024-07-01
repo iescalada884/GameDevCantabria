@@ -77,23 +77,20 @@ public class GameManager : MonoBehaviour
             AudioSource.PlayOneShot(AudioToPlay);
         }
 
+        //Sumar a minijuegos completados con exito
         if (PlayerWon)
             currentStats.victories++;
 
-        if (miniGameSceneIndexes.Count != 1)
-        {
-            ++currentdialoguenumber;
-            gano = PlayerWon;
+        ++currentdialoguenumber;
 
-            
+        // control gano
+        if (miniGameSceneIndexes.Count > 1)
+        { 
+            gano = PlayerWon;
            
         }
         else {
-            if (PlayerWon)
-                currentStats.victories++;
-
-            ++currentdialoguenumber;
-            gano = currentStats.victories == SceneManager.sceneCountInBuildSettings - 4;
+            gano = currentStats.victories == 3;
         }
 
         cambiaEscena("Dialog");
