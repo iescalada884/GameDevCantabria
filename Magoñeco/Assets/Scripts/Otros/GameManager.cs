@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        // Switch to 1920 x 1080 fullscreen at 60 hz
+        Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow, new RefreshRate() { numerator = 60, denominator = 1 });
+
         if (_instance == null)
             _instance = this;
         else
